@@ -37,8 +37,15 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
+    //Material for "material.textfield.TextInputEditText"
+    def material_version = "1.0.0"
+    implementation "com.google.android.material:material:$material_version"
+
     //Dagger version
     def dagger_version = "2.38.1"
+
+    //Glide version
+    def glide_version = "4.12.0"
 
     //Dagger general dependencies
     implementation "com.google.dagger:dagger:$dagger_version"
@@ -48,4 +55,8 @@ dependencies {
     implementation "com.google.dagger:dagger-android:$dagger_version"
     implementation "com.google.dagger:dagger-android-support:$dagger_version" // if you use the support libraries
     annotationProcessor "com.google.dagger:dagger-android-processor:$dagger_version"
+
+    //Glide image processing library
+    implementation "com.github.bumptech.glide:glide:$glide_version"
+    annotationProcessor "com.github.bumptech.glide:compiler:$glide_version"
 }
