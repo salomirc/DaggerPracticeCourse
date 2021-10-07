@@ -23,19 +23,12 @@ public class AuthActivity extends DaggerAppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_auth);
-        setLogoFromUrl();
+        setLogo();
     }
 
     private void setLogo() {
         requestManager
                 .load(logo)
-                .into((ImageView) findViewById(R.id.login_logo));
-    }
-
-    private void setLogoFromUrl() {
-        requestManager
-                .load("https://lh6.ggpht.com/9SZhHdv4URtBzRmXpnWxZcYhkgTQurFuuQ8OR7WZ3R7fyTmha77dYkVvcuqMu3DLvMQ=w300")
-                .centerInside()
                 .into((ImageView) findViewById(R.id.login_logo));
     }
 }
