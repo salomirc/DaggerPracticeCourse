@@ -1,5 +1,6 @@
 package com.belsoft.daggerpracticecourse.viewmodels;
 
+import androidx.annotation.NonNull;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 
@@ -20,8 +21,9 @@ public class ViewModelProviderFactory implements ViewModelProvider.Factory {
         this.creators = creators;
     }
 
+    @NonNull
     @Override
-    public <T extends ViewModel> T create(Class<T> modelClass) {
+    public <T extends ViewModel> T create(@NonNull Class<T> modelClass) {
         Provider<? extends ViewModel> creator = creators.get(modelClass);
         if (creator == null) { // if the viewmodel has not been created
 
@@ -43,6 +45,7 @@ public class ViewModelProviderFactory implements ViewModelProvider.Factory {
 
         // return the Provider
         try {
+            //noinspection unchecked
             return (T) creator.get();
         } catch (Exception e) {
             throw new RuntimeException(e);

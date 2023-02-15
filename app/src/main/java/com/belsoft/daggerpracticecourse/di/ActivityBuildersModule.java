@@ -1,6 +1,7 @@
 package com.belsoft.daggerpracticecourse.di;
 
-import com.belsoft.daggerpracticecourse.AuthActivity;
+import com.belsoft.daggerpracticecourse.di.auth.AuthViewModelsModule;
+import com.belsoft.daggerpracticecourse.ui.auth.AuthActivity;
 
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
@@ -15,6 +16,8 @@ public abstract class ActivityBuildersModule {
     // Required to be an abstract method if we use @ContributesAndroidInjector annotation
     // This method declaration is specifying the AuthActivity as a potential client
     // and it can be now injected with dependencies
-    @ContributesAndroidInjector
+    @ContributesAndroidInjector(
+            modules = { AuthViewModelsModule.class }
+    )
     abstract AuthActivity contributeAuthActivity();
 }

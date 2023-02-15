@@ -21,6 +21,7 @@ import dagger.android.support.AndroidSupportInjectionModule;
 
             // our custom modules start here
             ActivityBuildersModule.class,
+            ViewModelFactoryModule.class,
             AppModule.class
     }
 )
