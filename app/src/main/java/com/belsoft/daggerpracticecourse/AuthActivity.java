@@ -1,5 +1,6 @@
 package com.belsoft.daggerpracticecourse;
 
+import android.app.Application;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.widget.ImageView;
@@ -19,11 +20,15 @@ public class AuthActivity extends DaggerAppCompatActivity {
     @Inject
     RequestManager requestManager;
 
+    @Inject
+    Application applicationInjected;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_auth);
         setLogo();
+        System.out.println(applicationInjected + " is injected with Dagger");
     }
 
     private void setLogo() {

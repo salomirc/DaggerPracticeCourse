@@ -10,6 +10,8 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.RequestManager;
 import com.bumptech.glide.request.RequestOptions;
 
+import javax.inject.Singleton;
+
 import dagger.Module;
 import dagger.Provides;
 
@@ -20,7 +22,10 @@ import dagger.Provides;
 @Module
 public class AppModule {
 
+    // @Singleton annotation identifies a type that the injector only instantiates once, also the scope
+    // of this type will be the same as AppComponent scope (entire lifetime of the application)
     // @Provides annotation is recommended to be used with a static method to make DI more efficient
+    @Singleton
     @Provides
     static RequestOptions provideRequestOptions() {
         return RequestOptions
@@ -31,6 +36,7 @@ public class AppModule {
 
     // Application instance is available because it was bind to the AppComponents
     // RequestOptions is available because RequestOptions exist as a dependency inside this module
+    @Singleton
     @Provides
     static RequestManager provideGlideInstance(Application application, RequestOptions requestOptions) {
         return Glide
@@ -38,6 +44,7 @@ public class AppModule {
                 .setDefaultRequestOptions(requestOptions);
     }
 
+    @Singleton
     @Provides
     static Drawable provideDrawable(Application application) {
         return ContextCompat.getDrawable(application, R.drawable.logo);
