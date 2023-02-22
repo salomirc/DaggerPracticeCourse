@@ -20,7 +20,7 @@ public abstract class AuthViewModelsModule {
       // How to map another ViewModel type i.e. AnotherViewModel.java
 //    @Binds
 //    @IntoMap
-//    @ViewModelKey(MainViewModel.class)
+//    @ViewModelKey(AnotherViewModel.class)
 //    public abstract ViewModel bindAuthViewModel(AnotherViewModel viewModel);
 
 }
