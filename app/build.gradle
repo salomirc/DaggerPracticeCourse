@@ -30,6 +30,15 @@ android {
 
 dependencies {
 
+    constraints {
+        implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.0") {
+            because("kotlin-stdlib-jdk7 is now a part of kotlin-stdlib")
+        }
+        implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.0") {
+            because("kotlin-stdlib-jdk8 is now a part of kotlin-stdlib")
+        }
+    }
+
     implementation 'androidx.appcompat:appcompat:1.3.1'
     implementation 'com.google.android.material:material:1.4.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.0'
@@ -58,8 +67,8 @@ dependencies {
     annotationProcessor "com.github.bumptech.glide:compiler:$glide_version"
 
     // ViewModel and LiveData
-    def lifecycle_version = '2.2.0'
-    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
+    def lifecycle_version = '2.6.0'
+    implementation "androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version"
 
     // Retrofit
     def retrofitVersion = "2.9.0"
@@ -73,4 +82,7 @@ dependencies {
     // Rx-Retrofit Call Adapter
     def rxcalladapter_version = '2.5.0'
     implementation "com.squareup.retrofit2:adapter-rxjava2:$rxcalladapter_version" // Retrofit call adapter
+
+    // Reactive Streams (convert Observable to LiveData)
+    implementation "androidx.lifecycle:lifecycle-reactivestreams:$lifecycle_version"
 }
