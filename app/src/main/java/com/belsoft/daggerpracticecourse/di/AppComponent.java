@@ -3,6 +3,7 @@ package com.belsoft.daggerpracticecourse.di;
 import android.app.Application;
 
 import com.belsoft.daggerpracticecourse.BaseApplication;
+import com.belsoft.daggerpracticecourse.SessionManager;
 
 import javax.inject.Singleton;
 
@@ -26,6 +27,8 @@ import dagger.android.support.AndroidSupportInjectionModule;
     }
 )
 public interface AppComponent extends AndroidInjector<BaseApplication> {
+
+    SessionManager sessionManager();
 
     @Component.Builder
     interface Builder {
