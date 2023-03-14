@@ -1,6 +1,7 @@
 package com.belsoft.daggerpracticecourse.ui.auth;
 
 import android.app.Application;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -16,6 +17,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.belsoft.daggerpracticecourse.R;
 import com.belsoft.daggerpracticecourse.models.User;
+import com.belsoft.daggerpracticecourse.ui.main.MainActivity;
 import com.belsoft.daggerpracticecourse.viewmodels.ViewModelProviderFactory;
 import com.bumptech.glide.RequestManager;
 
@@ -95,6 +97,7 @@ public class AuthActivity extends DaggerAppCompatActivity implements View.OnClic
                             showProgressBar(false);
                             assert userAuthResource.data != null;
                             Log.d(TAG, "onChanged: LOGIN SUCCESS:" + userAuthResource.data.getEmail());
+                            onLoginSuccess();
                             break;
                         }
                         case ERROR: {
@@ -110,6 +113,13 @@ public class AuthActivity extends DaggerAppCompatActivity implements View.OnClic
                 }
             }
         });
+    }
+
+    private void onLoginSuccess(){
+        Log.d(TAG, "onLoginSuccess: login successful!");
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+        finish();
     }
 
     private void showProgressBar(boolean isVisible) {
