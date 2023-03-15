@@ -3,6 +3,7 @@ package com.belsoft.daggerpracticecourse.di;
 import com.belsoft.daggerpracticecourse.di.auth.AuthModule;
 import com.belsoft.daggerpracticecourse.di.auth.AuthViewModelsModule;
 import com.belsoft.daggerpracticecourse.di.main.MainFragmentBuildersModule;
+import com.belsoft.daggerpracticecourse.di.main.MainViewModelsModule;
 import com.belsoft.daggerpracticecourse.ui.auth.AuthActivity;
 import com.belsoft.daggerpracticecourse.ui.main.MainActivity;
 
@@ -25,7 +26,7 @@ public abstract class ActivityBuildersModule {
     abstract AuthActivity contributeAuthActivity();
 
     @ContributesAndroidInjector(
-            modules = { MainFragmentBuildersModule.class }
+            modules = { MainFragmentBuildersModule.class, MainViewModelsModule.class }
     )
     abstract MainActivity contributeMainActivity();
 }
