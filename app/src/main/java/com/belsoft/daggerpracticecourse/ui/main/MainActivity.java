@@ -20,7 +20,6 @@ public class MainActivity extends BaseActivity {
         setContentView(R.layout.activity_main);
 
         testFragment();
-        Toast.makeText(this, "MainActivity", Toast.LENGTH_SHORT).show();
     }
 
     private void testFragment() {
