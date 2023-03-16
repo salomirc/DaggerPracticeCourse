@@ -3,6 +3,7 @@ package com.belsoft.daggerpracticecourse.di.main;
 import androidx.lifecycle.ViewModel;
 
 import com.belsoft.daggerpracticecourse.di.ViewModelKey;
+import com.belsoft.daggerpracticecourse.ui.main.posts.PostsViewModel;
 import com.belsoft.daggerpracticecourse.ui.main.profile.ProfileViewModel;
 
 import dagger.Binds;
@@ -16,4 +17,10 @@ public abstract class MainViewModelsModule {
     @IntoMap
     @ViewModelKey(ProfileViewModel.class)
     public abstract ViewModel bindProfileViewModel(ProfileViewModel viewModel);
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(PostsViewModel.class)
+    public abstract ViewModel bindPostsViewModel(PostsViewModel viewModel);
+
 }

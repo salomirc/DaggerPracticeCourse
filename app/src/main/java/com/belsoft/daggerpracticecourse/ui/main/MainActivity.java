@@ -4,12 +4,12 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
 import com.belsoft.daggerpracticecourse.BaseActivity;
 import com.belsoft.daggerpracticecourse.R;
+import com.belsoft.daggerpracticecourse.ui.main.posts.PostsFragment;
 import com.belsoft.daggerpracticecourse.ui.main.profile.ProfileFragment;
 
 public class MainActivity extends BaseActivity {
@@ -24,7 +24,8 @@ public class MainActivity extends BaseActivity {
 
     private void testFragment() {
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.main_container, new ProfileFragment())
+//                .replace(R.id.main_container, new ProfileFragment())
+                .replace(R.id.main_container, new PostsFragment())
                 .commit();
     }
 
