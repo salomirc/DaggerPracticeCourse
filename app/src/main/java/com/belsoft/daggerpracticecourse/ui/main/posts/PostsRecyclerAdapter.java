@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.belsoft.daggerpracticecourse.R;
+import com.belsoft.daggerpracticecourse.di.main.MainScope;
 import com.belsoft.daggerpracticecourse.models.Post;
 
 import java.util.ArrayList;
@@ -19,10 +20,6 @@ import javax.inject.Inject;
 public class PostsRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private List<Post> posts = new ArrayList<>();
-
-    @Inject
-    public PostsRecyclerAdapter() {
-    }
 
     @NonNull
     @Override

@@ -22,6 +22,7 @@ import com.belsoft.daggerpracticecourse.viewmodels.ViewModelProviderFactory;
 import com.bumptech.glide.RequestManager;
 
 import javax.inject.Inject;
+import javax.inject.Named;
 
 import dagger.android.support.DaggerAppCompatActivity;
 
@@ -45,6 +46,18 @@ public class AuthActivity extends DaggerAppCompatActivity implements View.OnClic
     @Inject
     Application applicationInjected;
 
+    @Inject
+    @Named("app_user")
+    User userNumber1;
+
+    @Inject
+    @Named("auth_user")
+    User userNumber2;
+
+    @Inject
+    @Named("auth_user")
+    User userNumber3;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,6 +70,10 @@ public class AuthActivity extends DaggerAppCompatActivity implements View.OnClic
         findViewById(R.id.login_button).setOnClickListener(this);
         setLogo();
         subscribeObservers();
+
+        Log.d(TAG, "onCreate: userNumber1 " + userNumber1);
+        Log.d(TAG, "onCreate: userNumber2 " + userNumber2);
+        Log.d(TAG, "onCreate: userNumber2 " + userNumber3);
     }
 
     private void setLogo() {
