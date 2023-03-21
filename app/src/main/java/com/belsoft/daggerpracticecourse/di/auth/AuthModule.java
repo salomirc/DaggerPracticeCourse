@@ -13,7 +13,7 @@ import retrofit2.Retrofit;
 @Module
 public class AuthModule {
 
-//    @AuthScope
+    @AuthScope
     @Provides
     @Named("auth_user")
     static User someUser() {
