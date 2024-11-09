@@ -3,13 +3,13 @@ plugins {
 }
 
 android {
-    compileSdkVersion 33
-    buildToolsVersion "30.0.3"
+    namespace = "com.belsoft.daggerpracticecourse"
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.belsoft.daggerpracticecourse"
         minSdkVersion 21
-        targetSdkVersion 33
+        targetSdkVersion 34
         versionCode 1
         versionName "1.0"
 

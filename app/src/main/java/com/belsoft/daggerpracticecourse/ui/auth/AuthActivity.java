@@ -84,11 +84,8 @@ public class AuthActivity extends DaggerAppCompatActivity implements View.OnClic
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.login_button:{
-                attemptLogin();
-                break;
-            }
+        if (v.getId() == R.id.login_button) {
+            attemptLogin();
         }
     }
 
