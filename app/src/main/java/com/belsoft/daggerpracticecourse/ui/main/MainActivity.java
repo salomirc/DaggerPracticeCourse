@@ -61,20 +61,28 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        int itemId = item.getItemId();
-        if (itemId == R.id.nav_profile) {
-            NavOptions navOptions = new NavOptions.Builder()
-                    .setPopUpTo(R.id.main, true)
-                    .build();
-            navController.navigate(R.id.profileScreen, null, navOptions);
-        } else if (itemId == R.id.nav_posts) {
-            navController.navigate(R.id.postsScreen);
-        } else if (itemId == android.R.id.home) {
-            if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
-                drawerLayout.closeDrawer(GravityCompat.START);
-                return true;
-            } else {
-                return false;
+        switch (item.getItemId()) {
+
+            case R.id.nav_profile:{
+                NavOptions navOptions = new NavOptions.Builder()
+                        .setPopUpTo(R.id.main, true)
+                        .build();
+                navController.navigate(R.id.profileScreen, null, navOptions);
+                break;
+            }
+
+            case R.id.nav_posts:{
+                navController.navigate(R.id.postsScreen);
+                break;
+            }
+
+            case android.R.id.home:{
+                if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+                    drawerLayout.closeDrawer(GravityCompat.START);
+                    return true;
+                } else {
+                    return false;
+                }
             }
         }
 
