@@ -28,6 +28,7 @@ import dagger.android.support.AndroidSupportInjectionModule;
 )
 public interface AppComponent extends AndroidInjector<BaseApplication> {
 
+    //this method implementation is not used in project
     SessionManager sessionManager();
 
     @Component.Builder
